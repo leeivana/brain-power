@@ -101,7 +101,7 @@
         {
           "blueprint-path": "config/blueprints/module/module-styles.ejs",
           "target-path": "client/modules/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.css"
-        }s
+        }
       ]
     }
   ]
