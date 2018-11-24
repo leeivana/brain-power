@@ -39,5 +39,13 @@ export default (
         });
       }}
     />
+    <Route
+      path="/students"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Student/Student').default);
+        });
+      }}
+    />
   </Route>
 );
