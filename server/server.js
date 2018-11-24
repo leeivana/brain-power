@@ -93,6 +93,10 @@ const renderFullPage = (html, initialState) => {
         ${head.script.toString()}
 
         ${isProdMode ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" href="http://res.cloudinary.com/hashnode/image/upload/v1455629445/static_imgs/mern/mern-favicon-circle-fill.png" type="image/png" />
