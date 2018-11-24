@@ -51,7 +51,7 @@ export default (
       path="/classes"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Class/Class').default);
+          cb(null, require('./modules/Class/pages/ClassListPage').default);
         });
       }}
     />

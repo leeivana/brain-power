@@ -27,17 +27,18 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({isMounted: true}); // eslint-disable-line
+    this.setState({ isMounted: true }); // eslint-disable-line
   }
 
   toggleAddPostSection = () => {
     this.props.dispatch(toggleAddPost());
   };
 
+  // {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
+
   render() {
     return (
       <div>
-        {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
         <div>
           <Helmet
             title="MERN Starter - Blog App"
@@ -54,14 +55,8 @@ export class App extends Component {
               },
             ]}
           />
-          <Header
-            switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-            intl={this.props.intl}
-            toggleAddPost={this.toggleAddPostSection}
-          />
-          <div className={styles.container}>
-            {this.props.children}
-          </div>
+          <Header switchLanguage={lang => this.props.dispatch(switchLanguage(lang))} intl={this.props.intl} toggleAddPost={this.toggleAddPostSection} />
+          <div className={styles.container}>{this.props.children}</div>
           <Footer />
         </div>
       </div>
