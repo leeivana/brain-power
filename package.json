@@ -16,10 +16,7 @@
     "slate": "rimraf node_modules && npm install",
     "lint": "eslint client server"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
+  "pre-commit": ["lint"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hashnode/mern-starter.git"
@@ -28,7 +25,8 @@
     "url": "https://github.com/Hashnode/mern-starter/issues"
   },
   "homepage": "https://github.com/Hashnode/mern-starter#readme",
-  "author": "Prashant Abhishek <prashant.abhishek7g@gmail.com>, Mayank Chandola <imayankchd@gmail.com>, Sandeep Panda <sandeep@hashnode.com>, Syed Fazle Rahman <fazle@hashnode.com>, Alkshendra Maurya <alkshendra@hashnode.com>",
+  "author":
+    "Prashant Abhishek <prashant.abhishek7g@gmail.com>, Mayank Chandola <imayankchd@gmail.com>, Sandeep Panda <sandeep@hashnode.com>, Syed Fazle Rahman <fazle@hashnode.com>, Alkshendra Maurya <alkshendra@hashnode.com>",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -117,25 +115,14 @@
     "node": ">=6"
   },
   "ava": {
-    "files": [
-      "client/**/*.spec.js",
-      "server/**/*.spec.js"
-    ],
-    "source": [
-      "client/**/*.js",
-      "server/**/*.js"
-    ],
+    "files": ["client/**/*.spec.js", "server/**/*.spec.js"],
+    "source": ["client/**/*.js", "server/**/*.js"],
     "failFast": true,
     "babel": "inherit",
-    "require": [
-      "./server/util/setup-test-env.js"
-    ]
+    "require": ["./server/util/setup-test-env.js"]
   },
   "nyc": {
-    "include": [
-      "client/**/*.js",
-      "server/**/*.js"
-    ],
+    "include": ["client/**/*.js", "server/**/*.js"],
     "exclude": [
       "**/*.spec.js",
       "client/reducers.js",
@@ -146,10 +133,6 @@
       "server/config.js",
       "server/dummyData.js"
     ],
-    "reporter": [
-      "lcov",
-      "text",
-      "html"
-    ]
+    "reporter": ["lcov", "text", "html"]
   }
 }
