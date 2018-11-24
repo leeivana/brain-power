@@ -80,6 +80,29 @@
           "target-path": "server/models/<%= name %>.js"
         }
       ]
+    },
+    {
+      "name": "module-react",
+      "description": "Generates a module including react components, reducer, action, style",
+      "usage": "module [module-name]",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/module/module.ejs",
+          "target-path": "client/modules/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/module/module-actions.ejs",
+          "target-path": "client/modules/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>Actions.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/module/module-reducer.ejs",
+          "target-path": "client/modules/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>Reducer.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/module/module-styles.ejs",
+          "target-path": "client/modules/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.css"
+        }s
+      ]
     }
   ]
 }
