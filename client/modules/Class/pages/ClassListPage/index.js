@@ -12,9 +12,6 @@ import Typography from '@material-ui/core/Typography';
 class ClassListPage extends Component {
   render() {
     return <div>
-      <Typography gutterBottom variant="h2" component="h2" align="center">
-        Classes
-      </Typography>
       <ClassList classes={this.props.classes}/>
     </div>;
   }

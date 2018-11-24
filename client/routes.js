@@ -27,31 +27,15 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/posts/:slug-:cuid"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/students"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/Student/Student').default);
-        });
-      }}
-    />
-    <Route
-      path="/classes"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
           cb(null, require('./modules/Class/pages/ClassListPage').default);
+        });
+      }}
+    />
+    <Route
+      path="/classes/:classId"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Class/pages/ClassDetailPage').default);
         });
       }}
     />

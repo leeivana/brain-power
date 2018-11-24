@@ -41,7 +41,7 @@ export class App extends Component {
       <div>
         <div>
           <Helmet
-            title="MERN Starter - Blog App"
+            title="Attedance Please"
             titleTemplate="%s - Blog App"
             meta={[
               { charset: 'utf-8' },

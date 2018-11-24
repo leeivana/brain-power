@@ -7,12 +7,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { ClassItemPropType } from '../../../../util/propTypes';
+import { Link } from 'react-router';
+
 
 import styles from './ClassItem.css'
 
 function ClassItem(props){
   return (
-    <Card className={styles.card}>
+    <Card elevation={24} className={styles.card}>
      <CardActionArea>
        <CardMedia
          className={styles.media}
@@ -29,11 +31,11 @@ function ClassItem(props){
        </CardContent>
      </CardActionArea>
      <CardActions>
+
        <Button size="small" color="primary">
-         Students
-       </Button>
-       <Button size="small" color="primary">
-         Attendance
+         <Link to={`/classes/342`} >
+           View More
+         </Link>
        </Button>
      </CardActions>
    </Card>
