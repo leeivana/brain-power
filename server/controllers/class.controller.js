@@ -1,5 +1,12 @@
-import Class from '../models/class';
+import Classes from '../models/class';
 
-export function getSomething(req, res) {
-  return res.status(200).end();
+
+//gets all classes
+export function getClasses(req, res) {
+  Classes.find().exec((err, classes) => {
+    if(err){
+     res.status(500).send(err);
+    }
+    res.json({ classes });
+  });
 }

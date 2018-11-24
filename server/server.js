@@ -46,7 +46,14 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
+
+import students from './routes/student.routes'
+import classes from './routes/class.routes'
+
 import dummyData from './dummyData';
+import studentTest from './student_test_data';
+import classTest from './class_test_data';
+
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -62,6 +69,9 @@ if (process.env.NODE_ENV !== 'test') {
 
     // feed some dummy data in DB.
     dummyData();
+    studentTest();
+    classTest();
+
   });
 }
 
@@ -71,6 +81,8 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 app.use('/api', posts);
+app.use('/api/students', students);
+app.use('/api/classes', classes);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
