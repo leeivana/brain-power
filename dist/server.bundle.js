@@ -711,17 +711,17 @@ if (isDevMode) {
 _mongoose2.default.Promise = global.Promise;
 
 // MongoDB Connection
-if (process.env.NODE_ENV !== 'test') {
-  _mongoose2.default.connect(_config2.default.mongoURL, function (error) {
-    if (error) {
-      console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
-      throw error;
-    }
-
-    // feed some dummy data in DB.
-    (0, _dummyData2.default)();
-  });
-}
+// if (process.env.NODE_ENV !== 'test') {
+//   mongoose.connect(serverConfig.mongoURL, error => {
+//     if (error) {
+//       console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
+//       throw error;
+//     }
+//
+//     // feed some dummy data in DB.
+//     dummyData();
+//   });
+// }
 
 // Apply body Parser and server public assets and routes
 app.use((0, _compression2.default)());

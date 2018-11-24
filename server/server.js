@@ -1,6 +1,6 @@
 import Express from 'express';
 import compression from 'compression';
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
@@ -52,7 +52,7 @@ import dummyData from './dummyData';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 // MongoDB Connection
 // if (process.env.NODE_ENV !== 'test') {
